@@ -19,6 +19,22 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS
+          options: {
+            sourceMap: true
+          }
+        }, {
+          loader: 'sass-loader', // compiles Less to CSS
+          options: {
+            sourceMap: true
+          }
+        }]
       }
     ]
   },
